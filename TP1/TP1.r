@@ -3,8 +3,9 @@
 
 library(jpeg)
 img = readJPEG("Joconde.jpg")
- #plot(1:2,type="n")
- #rasterImage(img,1.2,1.27,1.8,1.73)
+
+#plot(1:2,type="n")
+#rasterImage(img,1.2,1.27,1.8,1.73)
 
 ##Extraction des couleurs
 img_r <- img[,,1]
@@ -62,5 +63,4 @@ img_compressee <- pmin(pmax(img_compressee, 0), 1)
 
 plot(1:2,type="n")
 rasterImage(img_compressee,1.2,1.27,1.8,1.73)
-
 
