@@ -17,7 +17,7 @@ decomp_g <- svd(img_g)
 decomp_b <- svd(img_b)
 
 
-#Calcul des valeurs propres et des valeurs singulières
+#Calcul des valeurs singulières
 val_sing_img_r <- decomp_r$d
 
 val_sing_img_g <- decomp_g$d
