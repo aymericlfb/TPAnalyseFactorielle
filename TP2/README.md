@@ -29,6 +29,15 @@
 
 ## Exercice 2
 
+### Sans standardisation, les deux premier axes captent 89% de l'information mais ce qui est artificiel vu la manque de standardisation (les grosses valeurs numériques emportent tout)
+### Avec la standardisation les deux premiers axes captent 51%
+
+### L'Axe 1 classe les villes de la petite bourgade calme et bon marché vers la grande métropole riche, culturelle et chère. L'Axe 2 affine le profil en distinguant la ville universitaire/institutionnelle de la ville de loisirs/économique.
+
+### Si je devais choisir une ville je choirais surement Little Rock car elle se trouve dans l'extreme centre qui sont des villes de taille intermédiaire, très stables, qui combinent un coût du logement modéré, une bonne tranquillité (loin de la criminalité) et une economie/loisirs assez developpé.
+
+
+![Screen console](captures/ex2_1.png)
 
 
 
