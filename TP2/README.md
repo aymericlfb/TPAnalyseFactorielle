@@ -39,5 +39,17 @@
 
 ![Screen console](captures/ex2_1.png)
 
+## Exercice 3
+
+### Sans standardisation les papramètres n'ont pas la meme echelles de se fait l'axe capture près de 90% de la variance totale qui est entierement dominé par l'acide chimique qui représente la plus grande amplitude numérique et ecrase les autres variables
+### Avec standardisation et en ramenant chaque acide gras à une moyenne de 0 et un ecart type de 1 l'inertie se répartit de manière plus homogène sur les différents axes.
+
+### En prenant 3 axes on peut représenter 81% de la variance totale ce qui permet de représenter la quasi totalité de l'information en 3D
+
+### En coloriant les huiles par leurs origines ont se rend compte qu'il y a une nette séparation et qu'il y a bien une corrélation entre l'origine et la composition de l'huile
+
+![Screen console](captures/ex3.png)
+
+
 
 

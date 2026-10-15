@@ -69,12 +69,59 @@
 # #        pch = c(19, 17))
 
 
-#Exercice 2)
+# #Exercice 2)
+
+# #Chargement des données
+# A <- read.table("villesAmericaines.txt", header = TRUE, sep = "", stringsAsFactors = FALSE)
+# # #On selectionne les colonnes pour l'ACP
+# X <- A[, 2:10]
+
+# #ACP sans standardisation
+# acp_sans_std <- prcomp(X, scale. = FALSE)
+
+# print("ACP SANS standardisation : Valeurs propres:")
+# val_propres_sans <- acp_sans_std$sdev^2
+# print(val_propres_sans)
+
+# print("Variance expliquée (%) SANS standardisation:")
+# print((val_propres_sans / sum(val_propres_sans)) * 100)
+
+
+# #ACP avec standardisation
+# acp_avec_std <- prcomp(X, scale. = TRUE)
+
+# print("ACP AVEC standardisation : Valeurs propres:")
+# val_propres_avec <- acp_avec_std$sdev^2
+# print(val_propres_avec)
+
+# print("Variance expliquée (%) AVEC standardisation:")
+# print((val_propres_avec / sum(val_propres_avec)) * 100)
+
+
+# #Visualisation
+
+# scores <- pca_avec_std$x
+
+# plot(scores[, 1], scores[, 2], 
+#      col = "blue", pch = 19, cex = 0.8,
+#      xlab = "Composante 1 (CP1)", 
+#      ylab = "Composante 2 (CP2)", 
+#      main = "ACP des villes américaines (Plan factoriel)")
+# abline(h = 0, v = 0, col = "grey", lty = 2)
+
+
+# text(scores[villes_data$Name == "Little-Rock,North-Little-Rock,AR", 1], 
+#      scores[villes_data$Name == "Little-Rock,North-Little-Rock,AR", 2], 
+#      labels = "Little Rock", pos = 3, col = "red", font = 2)
+
+
+#Exercice 3)
 
 #Chargement des données
-A <- read.table("villesAmericaines.txt", header = TRUE, sep = "", stringsAsFactors = FALSE)
-# #On selectionne les colonnes pour l'ACP
-X <- A[, 2:10]
+A <- read.table("oliveoil.txt", header = TRUE, sep = "", stringsAsFactors = FALSE)
+
+#On selectionne les colonnes pour l'ACP
+X <- A[, 3:10]
 
 #ACP sans standardisation
 acp_sans_std <- prcomp(X, scale. = FALSE)
@@ -100,16 +147,21 @@ print((val_propres_avec / sum(val_propres_avec)) * 100)
 
 #Visualisation
 
-scores <- pca_avec_std$x
+scores <- acp_avec_std$x
+
+couleurs <- ifelse(A$région == "South", "red", "blue")
+
 
 plot(scores[, 1], scores[, 2], 
-     col = "blue", pch = 19, cex = 0.8,
+     col = couleurs, pch = 19, cex = 0.8,
      xlab = "Composante 1 (CP1)", 
      ylab = "Composante 2 (CP2)", 
-     main = "ACP des villes américaines (Plan factoriel)")
+     main = "ACP des huiles d'olive ")
+
 abline(h = 0, v = 0, col = "grey", lty = 2)
 
-
-text(scores[villes_data$Name == "Little-Rock,North-Little-Rock,AR", 1], 
-     scores[villes_data$Name == "Little-Rock,North-Little-Rock,AR", 2], 
-     labels = "Little Rock", pos = 3, col = "red", font = 2)
+# Ajout d'une légende pour distinguer les regroupements géographiques
+legend("topright", 
+       legend = c("Sud (South)", "Centre-Nord (Centre.North)"), 
+       col = c("red", "blue"), 
+       pch = 19)
