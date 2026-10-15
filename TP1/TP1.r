@@ -1,7 +1,7 @@
 #Ex1)
 
 library(jpeg)
-img = readJPEG("Joconde.jpg")
+img = readJPEG("Joconde.jpg"    )
 
 #plot(1:2,type="n")
 #rasterImage(img,1.2,1.27,1.8,1.73)
@@ -197,7 +197,7 @@ B <- read.table("donnees2aSuperposer.txt", header = FALSE)
 A <- as.matrix(A)
 B <- as.matrix(B)
 
-# 2. Réalisation de l'ACP pour chaque objet
+#Réalisation de l'ACP pour chaque objet
 acp_A <- prcomp(A, center = TRUE, scale. = FALSE)
 acp_B <- prcomp(B, center = TRUE, scale. = FALSE)
 
