@@ -1,7 +1,7 @@
 #Ex1)
 
 library(jpeg)
-img = readJPEG("Joconde.jpg"    )
+img = readJPEG("Joconde.jpg")
 
 #plot(1:2,type="n")
 #rasterImage(img,1.2,1.27,1.8,1.73)
